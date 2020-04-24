@@ -1,0 +1,44 @@
+import java.io.*;
+
+
+public class test1 {
+
+	public static void main(String[] args) throws IOException { 
+
+		int number;
+		int a;
+		int[ ] unit={50000, 10000, 5000, 1000, 100, 50, 10, 1};//금액을 입력받고 계산하기 위해 1차원 배열을 선언
+
+		System.out.println("ATM 프로그램입니다.");
+		System.out.printf("'q'를 입력하시면 프로그램이 종료 됩니다.");
+
+
+		BufferedReader inbr=new BufferedReader(new
+		InputStreamReader(System.in));
+
+
+		while(true) { //종료 조건을 만족하기 전까지 무한 루프 실행
+		   
+		System.out.printf("\n계속하시겠습니까? 계속(y) / 종료(q) : \n");
+		String d=inbr.readLine();
+		// q를 입력시 무한루프 조건문을 탈출
+		if(!d.equals("y") && !d.equals("q")) {
+		System.out.println("올바르지 못한 입력값입니다. 다시 입력해주세요 ");
+
+		}else if(d.equals("y")) {
+		System.out.printf("금액을 입력하세요: \n");
+		number=Integer.parseInt(inbr.readLine()); //BufferReader 객체를 통해 점수를 입력받음
+		for(int i=0;i<unit.length;i++) {
+		   
+		a=number/unit[i];
+		System.out.print(unit[i]+"원"+a+"개,  ");
+		number=number%unit[i];
+		}
+
+		}else if(d.equals("q")) {
+		System.out.printf("종료하였습니다.");
+		break;
+		}
+		}
+		}
+		}
