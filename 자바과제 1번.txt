@@ -14,7 +14,7 @@ public class test1 {
 
 
 		BufferedReader inbr=new BufferedReader(new
-		InputStreamReader(System.in));
+		InputStreamReader(System.in)); //버퍼리드  키보드 입력을 받음
 
 
 		while(true) { //종료 조건을 만족하기 전까지 무한 루프 실행
